@@ -1,10 +1,13 @@
+import React from "react";
 import Header from "./components/Layouts/Header/Header";
+import ResturantSummary from "./components/Layouts/ResturantSummary/ResturantSummary";
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <Header></Header>
-    </div>
+      <ResturantSummary />
+    </React.Fragment>
   );
 }
 
