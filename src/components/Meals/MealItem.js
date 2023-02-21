@@ -13,7 +13,7 @@ const price=`$${props.price}`
         <section className={classes.price}>{price}</section>
       </div>
       <div>
-        <MealItemForm/>
+        <MealItemForm id={props.id}/>
       </div>
     </li>
   );
