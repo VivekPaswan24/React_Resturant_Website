@@ -3,25 +3,26 @@ import Cart from "./components/Cart/Cart";
 import Header from "./components/Layouts/Header/Header";
 import ResturantSummary from "./components/Layouts/ResturantSummary/ResturantSummary";
 import Meals from "./components/Meals/Meals";
+import CartProvider from "./store/CartProvider";
 
 function App() {
-   const [showCart,setShowCart]=useState(false)
+  const [showCart, setShowCart] = useState(false);
 
-   const cartShowHandler=()=>{
+  const cartShowHandler = () => {
     setShowCart(true);
-   }
-   const hideCartHandler=()=>{
-    setShowCart(false)
-   }
+  };
+  const hideCartHandler = () => {
+    setShowCart(false);
+  };
   return (
-    <React.Fragment>
+    <CartProvider>
       {showCart && <Cart onClose={hideCartHandler} />}
-      <Header onShow={cartShowHandler}/>
+      <Header onShow={cartShowHandler} />
       <main>
         <ResturantSummary />
         <Meals />
       </main>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 
